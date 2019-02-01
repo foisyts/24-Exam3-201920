@@ -3,9 +3,9 @@ Exam 3, problem 5.
 
 Authors: Vibha Alangar, Aaron Wilkin, David Mutchler, Dave Fisher, 
          Matt Boutell, Amanda Stouder, their colleagues and 
-         PUT_YOUR_NAME_HERE.  January 2019.
+         Tristen Foisy.  January 2019.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -17,7 +17,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the   is_prime   function defined below.
+# DONE: 2.  READ the doc-string for the   is_prime   function defined below.
 # It is the same as you have seen before.
 # After you UNDERSTAND the doc-string (JUST the doc-string, NOT the code),
 # ASKING QUESTIONS AS NEEDED, change the above _TODO_ to DONE.
@@ -148,6 +148,21 @@ def problem5(seq_of_seq):
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    new_list = []
+    for k in range(len(seq_of_seq)):
+        for j in range(len(seq_of_seq[k])):
+            first_largest = seq_of_seq[k][0]
+            if j == 0:
+                current_largest = first_largest
+            if j != 0:
+                if current_largest <= seq_of_seq[k][j]:
+                    current_largest = seq_of_seq[k][j]
+        new_list = new_list + [current_largest]
+        current_largest = None
+    return new_list
+
+
+
 
 
 ###############################################################################
